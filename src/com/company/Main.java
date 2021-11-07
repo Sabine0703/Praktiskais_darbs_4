@@ -11,14 +11,17 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
         boolean continueProgram = true;
+        Random r = new Random();
+        String order;
+        int arrSize = 0;
+        String ascMsg = "Ievadiet \"a\" lai kārtotu elementus augošā secībā.\n";
+        String descMsg = "Ievadiet \"d\" lai kārtotu elementus dilstošā secībā.\n";
 
         do
         {
             System.out.print("-----------------------------------------------\n");
             System.out.print("Ievadiet masīva izmēru robežās (no 20 - 40):\n");
             System.out.print("-----------------------------------------------\n");
-
-            int arrSize = 0;
 
             if (!scan.hasNextInt())
             {
@@ -35,9 +38,8 @@ public class Main {
                 continue;
             }
 
-            Random r = new Random();
+            // create array here
             int[] arr = new int[arrSize];
-
 
             for ( int i = 0; i < arrSize; i++)
             {
@@ -45,21 +47,18 @@ public class Main {
             }
 
             System.out.print("\nIzveidotais masīvs: \n" + Arrays.toString(arr));
-
             System.out.print("\n\nVai vēlaties kārtot masīva elementus augošā vai dilstošā secībā?\n");
-            System.out.print("Ievadiet \"a\" lai kārtotu elementus augošā secībā.\n");
-            System.out.print("Ievadiet \"d\" lai kārtotu elementus dilstošā secībā.\n");
+            System.out.print(ascMsg);
+            System.out.print(descMsg);
             scan.nextLine();
             String orderInput = scan.nextLine();
 
             while(!orderInput.equalsIgnoreCase("a") && !orderInput.equalsIgnoreCase("d"))
             {
-                System.out.print("Ievadiet \"a\" lai kārtotu elementus augošā secībā.\n");
-                System.out.print("Ievadiet \"d\" lai kārtotu elementus dilstošā secībā.\n");
+                System.out.print(ascMsg);
+                System.out.print(descMsg);
                 orderInput = scan.nextLine();
             }
-
-            String order;
 
             if(orderInput.equalsIgnoreCase("a"))
             {
