@@ -14,7 +14,9 @@ public class Main {
 
         do
         {
+            System.out.print("-----------------------------------------------\n");
             System.out.print("Ievadiet masīva izmēru robežās (no 20 - 40):\n");
+            System.out.print("-----------------------------------------------\n");
 
             int arrSize = 0;
 
